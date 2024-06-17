@@ -1,5 +1,6 @@
 package com.example.recycleview2
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,6 +9,7 @@ import androidx.appcompat.view.menu.MenuView.ItemView
 import androidx.recyclerview.widget.RecyclerView
 
 class NumbersRecycleViewAdapter (var number:List<Int>):RecyclerView.Adapter<NumberView>(){
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NumberView {
       var itemView=LayoutInflater.from(parent.context)
           .inflate(R.layout.number_list_item,parent,false)
