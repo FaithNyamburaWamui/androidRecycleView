@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
        binding=ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val number=fibonacci(100)
+        val number=findFinabonacci(100)
         binding.rvRecycleView.layoutManager=LinearLayoutManager(this)
 
         val numberAdapter=NumbersRecycleViewAdapter(number)
@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun fibonacci(n:Int):List<Int>{
+    fun findFinabonacci(n:Int):List<Int>{
         val number= mutableListOf(0,1)
         while (number.size<n){
            number.add(number[number.lastIndex] + number[number.lastIndex-1])
