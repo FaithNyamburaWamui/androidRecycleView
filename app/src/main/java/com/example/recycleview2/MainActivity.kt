@@ -15,10 +15,22 @@ class MainActivity : AppCompatActivity() {
        binding=ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val numbers= listOf(0,1,1,2,3,5,8,13,21,34,55,89,144,233)
+        val number=fibonacci(100)
         binding.rvRecycleView.layoutManager=LinearLayoutManager(this)
-        val numberAdapter=NumbersRecycleViewAdapter(numbers)
+
+        val numberAdapter=NumbersRecycleViewAdapter(number)
         binding.rvRecycleView.adapter=numberAdapter
 
+//        val numbers= listOf(0,1,1,2,3,5,8,13,21,34,55,89,144,233)
+
+
+    }
+
+    fun fibonacci(n:Int):List<Int>{
+        val number= mutableListOf(0,1)
+        while (number.size<n){
+           number.add(number[number.lastIndex] + number[number.lastIndex-1])
+        }
+        return number
     }
 }

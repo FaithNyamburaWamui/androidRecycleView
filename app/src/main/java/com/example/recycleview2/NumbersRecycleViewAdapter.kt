@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 class NumbersRecycleViewAdapter (var number:List<Int>):RecyclerView.Adapter<NumberView>(){
 
+    @SuppressLint("SuspiciousIndentation")
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NumberView {
       var itemView=LayoutInflater.from(parent.context)
           .inflate(R.layout.number_list_item,parent,false)
